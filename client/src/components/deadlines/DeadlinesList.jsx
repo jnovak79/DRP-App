@@ -1,12 +1,12 @@
 import React from 'react';
 import DeadlinesInnerList from './DeadlinesInnerList.jsx';
 
-const DeadlinesList = function () {
+const DeadlinesList = function ({deadlines}) {
 
   return (
-    <section>
+    <section className='deadlinesList'>
       Deadlines
-      <DeadlinesInnerList />
+      <DeadlinesInnerList deadlines={deadlines}/>
     </section>
   )
 }

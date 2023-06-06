@@ -1,10 +1,12 @@
 import React from 'react';
 
-const DeadlineEntry = function () {
+const DeadlineEntry = function ({deadline}) {
 
   return (
     <div>
-      Deadline Entry
+      Task: {deadline.Task}
+      Summary: {deadline.Summary}
+      Date: {deadline.Date}
     </div>
   )
 }

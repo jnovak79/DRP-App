@@ -1,12 +1,15 @@
 import React from 'react';
 import DeadlineEntry from './DeadlineEntry.jsx';
 
-const DeadlinesInnerList = function () {
+const DeadlinesInnerList = function ({deadlines}) {
+
 
   return (
-    <div>
+    <div className='innerList'>
       Inner List
-      <DeadlineEntry />
+      {deadlines.map(function(deadline) {
+        return <DeadlineEntry deadline={deadline}/>
+      })}
     </div>
   )
 }

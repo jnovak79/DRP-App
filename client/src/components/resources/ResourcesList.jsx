@@ -3,7 +3,7 @@ import React from 'react';
 const ResourcesList = function () {
 
   return (
-    <section>
+    <section className='resourcesList'>
       Resources List
     </section>
   )
