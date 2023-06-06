@@ -6,9 +6,8 @@ const DeadlinesInnerList = function ({deadlines}) {
 
   return (
     <div className='innerList'>
-      Inner List
-      {deadlines.map(function(deadline) {
-        return <DeadlineEntry deadline={deadline}/>
+      {deadlines.map(function(deadline, index) {
+        return <DeadlineEntry deadline={deadline} key={index}/>
       })}
     </div>
   )

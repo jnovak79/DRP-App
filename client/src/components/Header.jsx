@@ -3,8 +3,8 @@ import React from 'react';
 const Header = function () {
 
   return (
-    <section>
-      DRG - Staying on Track
+    <section id='siteHeader'>
+      <h1>DRP - Staying on Track</h1>
     </section>
   )
 }

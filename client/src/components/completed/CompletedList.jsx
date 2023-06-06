@@ -3,7 +3,7 @@ import React from 'react';
 const CompletedList = function () {
 
   return (
-    <section>
+    <section className='completedList'>
       Completed List
     </section>
   )

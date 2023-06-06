@@ -1,14 +1,47 @@
+#siteHeader {
+  text-align: center;
+}
+
 .deadlinesList {
   width: 60%;
   display: inline-block;
+  margin: 2%;
 }
 
 .innerList {
   border: solid;
+  min-height: 40vh;
 }
 
 .resourcesList {
   vertical-align: top;
   display: inline-block;
   width: 30%;
+  margin: 2%;
+}
+
+.innerResourcesList {
+  border: solid;
+  min-height: 40vh;
+}
+
+.deadlineFormHolder {
+  margin: 2%;
+}
+
+.deadlineForm label, .deadlineForm input, .deadlineForm textarea{
+  display: block;
+}
+
+.formTaskInput {
+  width: 50%;
+}
+
+.formSummaryInput {
+  width: 50%;
+  height: 15vh;
+}
+
+.completedList {
+  margin: 2%;
 }

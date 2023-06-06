@@ -6,7 +6,8 @@ mongoose.connect('mongodb://localhost:27017/DRP');
 const TasksSchema = new mongoose.Schema({
   Task: {type: String, required: true},
   Summary: {type: String, required: true},
-  Date: {type: String, required: true}
+  Date: {type: String, required: true},
+  Completed: {type: Boolean, required: true}
 })
 
 const LinksSchema = new mongoose.Schema({

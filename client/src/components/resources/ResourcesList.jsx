@@ -1,10 +1,12 @@
 import React from 'react';
+import InnerResourcesList from './InnerResourcesList.jsx';
 
 const ResourcesList = function () {
 
   return (
     <section className='resourcesList'>
-      Resources List
+      Resources
+      <InnerResourcesList />
     </section>
   )
 }
