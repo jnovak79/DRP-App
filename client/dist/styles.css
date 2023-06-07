@@ -11,6 +11,8 @@
 .innerList {
   border: solid;
   min-height: 40vh;
+  max-height: 60vh;
+  overflow: auto;
 }
 
 .resourcesList {
@@ -23,6 +25,7 @@
 .innerResourcesList {
   border: solid;
   min-height: 40vh;
+  max-height: 60vh;
 }
 
 .deadlineFormHolder {
@@ -44,4 +47,43 @@
 
 .completedList {
   margin: 2%;
+}
+
+.taskEntry {
+  padding: 2%;
+  display: inline-block;
+  width: 96%;
+  border-bottom: solid;
+}
+
+.taskTitle {
+  text-decoration: underline;
+}
+
+.taskEntryBody {
+  display: inline-block;
+  width: 65%;
+}
+
+.taskEntry h3 {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.taskEntry h4 {
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  text-decoration: underline;
+}
+
+.taskEntry p {
+  margin-top: 2%;
+}
+
+.taskEntryDate {
+  margin-top: 1%;
+  vertical-align: top;
+  display: inline-block;
+  width: 30%;
+  text-align: right;
 }

@@ -10,44 +10,28 @@ import axios from 'axios';
 
 const App = function () {
 
-  const [deadlines, setDeadlines] = useState([
-    {
-      Task: 'Placeholder',
-      Summary: 'Placeholder Summary',
-      Date: 'Feb 31st 2099',
-      Completed: false
-    },
-    {
-      Task: 'Placeholder2',
-      Summary: 'Placeholder2 Summary',
-      Date: 'March 32st 2099',
-      Completed: false
-    },
-    {
-      Task: 'Placeholder3',
-      Summary: 'Placeholder3 Summary',
-      Date: 'May 21st 2100',
-      Completed: true
-    }
-  ])
+  const [deadlines, setDeadlines] = useState([])
 
-  useEffect (function () {
+  let listFiller = function () {
     axios.get('/tasks')
     .then((result) => {
-      console.log(result);
+      setDeadlines(result.data);
     })
     .catch((err) => {
       console.log('Error retrieving')
     })
-  }, [])
+  }
 
+  useEffect (function () {
+    listFiller()
+  }, [])
 
   return (
     <div>
       <Header />
       <DeadlinesList deadlines={deadlines}/>
       <ResourcesList />
-      <DeadlineFormHolder />
+      <DeadlineFormHolder setDeadlines={setDeadlines}/>
       <CompletedList />
     </div>
   )

@@ -1,12 +1,12 @@
 import React from 'react';
 import DeadlineForm from './DeadlineForm.jsx';
 
-const DeadlineFormHolder = function () {
+const DeadlineFormHolder = function ({setDeadlines}) {
 
   return (
     <section className='deadlineFormHolder'>
       Add a New Task
-      <DeadlineForm />
+      <DeadlineForm  setDeadlines={setDeadlines}/>
     </section>
   )
 }

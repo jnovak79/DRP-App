@@ -2,34 +2,25 @@ const db = require ('../db/db.js')
 
 const controllers = {};
 
-controllers.getTasks = function (req, res) {
-  db.Tasks.find()
-    .then((result) => {
-      console.log(result);
-      res.send(200).send('Success');
-    })
-    .catch((err) => {
-      res.status(500).send('error retrieving tasks');
-    })
+controllers.getTasks = function () {
+  return db.Tasks.find()
 }
 
-controllers.addTasks = function (req, res) {
-  db.Tasks.create({
-    Task: 'Task',
-    Summary: 'Summary',
-    Date: 'Date'
-  })
-  .then((result) => {
-    console.log(result);
-    res.send(200).send('Task Added')
-  })
-  .catch((err) => {
-    res.status(500).send('error adding task')
+controllers.addTasks = function (data) {
+  return db.Tasks.create({
+    Task: data.Task,
+    Summary: data.Summary,
+    Date: data.Date,
+    Completed: false
   })
 }
 
 controllers.addLinks;
 
 controllers.getLinks;
+
+controllers.deleteAll = function () {
+  return db.Tasks.deleteMany()
+}
 
 module.exports = controllers;
