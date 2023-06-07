@@ -1,7 +1,7 @@
 import React from 'react';
-import CompleteButton from './CompleteButton.jsx';
+import BackToTasksButton from './BackToTasksButton.jsx';
 
-const DeadlineEntry = function ({deadline, listFiller}) {
+const CompletedEntry = function ({deadline, listFiller}) {
 
   return (
     <section className='taskEntry'>
@@ -20,11 +20,11 @@ const DeadlineEntry = function ({deadline, listFiller}) {
         </div>
       </div>
       <div className='taskEntryDate'>
-        Due on {deadline.Date}
-        <CompleteButton deadline={deadline} listFiller={listFiller}/>
+        Was due on {deadline.Date}
+        <BackToTasksButton deadline={deadline} listFiller={listFiller}/>
       </div>
     </section>
   )
 }
 
-export default DeadlineEntry;
+export default CompletedEntry;

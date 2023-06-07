@@ -16,6 +16,8 @@ const DeadlineForm = function ({setDeadlines}) {
     })
       .then((result) => {
         setDeadlines(result.data);
+        e.target[0].value = '';
+        e.target[1].value = '';
       })
       .catch((err) => {
 
@@ -33,7 +35,7 @@ const DeadlineForm = function ({setDeadlines}) {
       <label>Due Date
         <input type='date'/>
       </label>
-      <input type='submit' value='Submit'/>
+      <input className='taskSubmit' type='submit' value='Submit'/>
     </form>
   )
 }

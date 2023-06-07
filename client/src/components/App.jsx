@@ -5,6 +5,7 @@ import CompletedList from './completed/CompletedList.jsx';
 import ResourcesList from './resources/ResourcesList.jsx';
 import Header from './Header.jsx';
 import axios from 'axios';
+import Nuclear from './Nuclear.jsx';
 
 // PLACEHOLDER DATA UNTIL RESPONSE FROM DB IN DEADLINES FIRST STATE
 
@@ -29,12 +30,13 @@ const App = function () {
   return (
     <div>
       <Header />
-      <DeadlinesList deadlines={deadlines}/>
+      <DeadlinesList deadlines={deadlines} listFiller={listFiller}/>
       <ResourcesList />
       <DeadlineFormHolder setDeadlines={setDeadlines}/>
-      <CompletedList />
+      <CompletedList deadlines={deadlines} listFiller={listFiller}/>
     </div>
   )
+
 }
 
 export default App;

@@ -1,11 +1,16 @@
 import React from 'react';
+import CompletedEntry from './CompletedEntry.jsx';
 
-const CompletedInnerList = function () {
+const CompletedInnerList = function ({deadlines, listFiller}) {
 
 
   return (
     <div className='innerList'>
-
+            {deadlines.map(function(deadline, index) {
+        if (deadline.Completed) {
+          return <CompletedEntry deadline={deadline} key={index} listFiller={listFiller}/>
+        }
+      })}
     </div>
   )
 }

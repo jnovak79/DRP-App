@@ -15,6 +15,11 @@ controllers.addTasks = function (data) {
   })
 }
 
+controllers.completeTask = function (params) {
+  return db.Tasks.findOneAndUpdate({_id: params.id},
+    {Completed: params.completed})
+}
+
 controllers.addLinks;
 
 controllers.getLinks;

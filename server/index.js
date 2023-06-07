@@ -7,13 +7,13 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-controllers.deleteAll()
-  .then((result) => {
-    console.log('Database cleared')
-  })
-  .catch((err) => {
-    console.log('Error clearing database')
-  })
+// controllers.deleteAll()
+//   .then((result) => {
+//     console.log('Database cleared')
+//   })
+//   .catch((err) => {
+//     console.log('Error clearing database')
+//   })
 
 app.get('/tasks', (req, res) => {
   controllers.getTasks()
@@ -33,6 +33,16 @@ app.post('/tasks', (req, res) => {
         .catch((err) => {res.status(500).send('error updating tasks');})
     })
     .catch((err) => {res.status(500).send('error adding tasks');})
+})
+
+app.put('/tasks', (req, res) => {
+  controllers.completeTask(req.query)
+    .then((result) => {
+      res.status(200).send('Received request to update');
+    })
+    .catch((err) => {
+      res.status(500).send('Error with request to update');
+    })
 })
 
 let port = 3100;
