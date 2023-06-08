@@ -5,7 +5,7 @@ const ResourcesFormHolder = function ({setURLLinks, linkFiller}) {
 
   return (
     <section className='deadlineFormHolder'>
-      Add a New Resource
+      <span className='formHeader'>Add a New Resource</span>
       <ResourcesForm setURLLinks={setURLLinks} linkFiller={linkFiller}/>
     </section>
   )

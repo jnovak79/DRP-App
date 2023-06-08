@@ -4,7 +4,7 @@ const Header = function () {
 
   return (
     <section id='siteHeader'>
-      <h1>DRP - Staying on Track</h1>
+      <h1>DRP - STAYING ON TRACK</h1>
     </section>
   )
 }

@@ -5,7 +5,7 @@ const DeadlineFormHolder = function ({setDeadlines}) {
 
   return (
     <section className='deadlineFormHolder'>
-      Add a New Task
+      <span className='formHeader'>Add a New Task</span>
       <DeadlineForm  setDeadlines={setDeadlines}/>
     </section>
   )

@@ -5,7 +5,7 @@ const DeadlinesList = function ({deadlines, taskListFiller}) {
 
   return (
     <section className='deadlinesList'>
-      Deadlines
+      <span>Deadlines</span>
       <DeadlinesInnerList deadlines={deadlines} taskListFiller={taskListFiller}/>
     </section>
   )

@@ -5,7 +5,7 @@ const ResourcesList = function ({URLLinks}) {
 
   return (
     <section className='resourcesList'>
-      Resources
+      <span>Resources</span>
       <InnerResourcesList URLLinks={URLLinks}/>
     </section>
   )
