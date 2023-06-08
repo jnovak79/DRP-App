@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-const ResourcesForm = function ({setDeadlines}) {
+const ResourcesForm = function ({setURLLinks, linkFiller}) {
 
   let handleSubmit = function (e) {
     e.preventDefault();
@@ -13,7 +13,7 @@ const ResourcesForm = function ({setDeadlines}) {
       task_id: 1
     })
       .then((result) => {
-        setDeadlines(result.data);
+        linkFiller();
         e.target[0].value = '';
         e.target[1].value = '';
       })

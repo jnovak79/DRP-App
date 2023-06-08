@@ -1,12 +1,12 @@
 import React from 'react';
 import CompletedInnerList from './CompletedInnerList.jsx';
 
-const CompletedList = function ({deadlines, listFiller}) {
+const CompletedList = function ({deadlines, taskListFiller}) {
 
   return (
     <section className='completedList'>
       Completed List
-      <CompletedInnerList deadlines={deadlines} listFiller={listFiller}/>
+      <CompletedInnerList deadlines={deadlines} taskListFiller={taskListFiller}/>
     </section>
   )
 }

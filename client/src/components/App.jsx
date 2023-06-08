@@ -6,52 +6,54 @@ import ResourcesList from './resources/ResourcesList.jsx';
 import Header from './Header.jsx';
 import axios from 'axios';
 import ResourcesFormHolder from './resources/ResourcesFormHolder.jsx';
-import Nuclear from './Nuclear.jsx';
 
 const App = function () {
 
-  const [deadlines, setDeadlines] = useState([])
+  const [deadlines, setDeadlines] = useState([]);
+  const [URLLinks, setURLLinks] = useState([]);
 
   let taskListFiller = function () {
     axios.get('/tasks')
-    .then((result) => {
-      setDeadlines(result.data);
-    })
-    .catch((err) => {
-      console.log('Error retrieving')
-    })
+      .then((result) => {
+        setDeadlines(result.data);
+      })
+      .catch((err) => {
+        console.log('Error retrieving tasks')
+      })
   }
 
   let linkFiller = function () {
-    axios.get('/')
+    axios.get('/resources')
+      .then((result) => {
+        setURLLinks(result.data);
+      })
+      .catch((err) => {
+        console.log('Error retrieving links')
+      })
   }
+
+  useEffect (function () {
+    linkFiller();
+  }, [])
 
   useEffect (function () {
     taskListFiller()
   }, [])
 
-  const [nuke, setNuke] = useState(false)
 
-  if (!nuke) {
+
+
   return (
     <div>
       <Header />
       <DeadlinesList deadlines={deadlines} taskListFiller={taskListFiller}/>
-      <ResourcesList />
+      <ResourcesList URLLinks={URLLinks}/>
       <DeadlineFormHolder setDeadlines={setDeadlines}/>
-      <ResourcesFormHolder setDeadlines={setDeadlines}/>
+      <ResourcesFormHolder setURLLinks={setURLLinks} linkFiller={linkFiller}/>
       <CompletedList deadlines={deadlines} taskListFiller={taskListFiller}/>
       <Nuclear setNuke={setNuke}/>
     </div>
   )
-  } else {
-    return (
-      <div className='NukePage'>
-        🗿
-      </div>
-    )
-  }
-
 }
 
 export default App;

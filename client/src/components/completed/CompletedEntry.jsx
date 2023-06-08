@@ -1,7 +1,7 @@
 import React from 'react';
 import BackToTasksButton from './BackToTasksButton.jsx';
 
-const CompletedEntry = function ({deadline, listFiller}) {
+const CompletedEntry = function ({deadline, taskListFiller}) {
 
   return (
     <section className='taskEntry'>
@@ -21,7 +21,7 @@ const CompletedEntry = function ({deadline, listFiller}) {
       </div>
       <div className='taskEntryDate'>
         Was due on {deadline.Date}
-        <BackToTasksButton deadline={deadline} listFiller={listFiller}/>
+        <BackToTasksButton deadline={deadline} taskListFiller={taskListFiller}/>
       </div>
     </section>
   )

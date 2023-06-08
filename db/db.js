@@ -12,7 +12,7 @@ const TasksSchema = new mongoose.Schema({
 
 const LinksSchema = new mongoose.Schema({
   task_id: {type: String, required: true},
-  Title: {type: String, required: true},
+  Description: {type: String, required: true},
   url: {type:String, required: true}
 })
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import InnerResourcesList from './InnerResourcesList.jsx';
 
-const ResourcesList = function () {
+const ResourcesList = function ({URLLinks}) {
 
   return (
     <section className='resourcesList'>
       Resources
-      <InnerResourcesList />
+      <InnerResourcesList URLLinks={URLLinks}/>
     </section>
   )
 }

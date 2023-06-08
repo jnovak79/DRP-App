@@ -9,7 +9,15 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // controllers.deleteAll()
 //   .then((result) => {
-//     console.log('Database cleared')
+//     console.log('tasks database cleared')
+//   })
+//   .catch((err) => {
+//     console.log('Error clearing database')
+//   })
+
+// controllers.deleteAllUrls()
+//   .then((result) => {
+//     console.log('Links database cleared')
 //   })
 //   .catch((err) => {
 //     console.log('Error clearing database')
@@ -48,21 +56,21 @@ app.put('/tasks', (req, res) => {
 app.get('/resources', (req, res) => {
   controllers.getLinks()
     .then((result) => {
-      res.status(200).send('Received request to get links');
+      res.status(200).send(result);
     })
     .catch((err) => {
       res.status(500).send('Error with request to get links');
     })
 })
 
-app.put('/resources', (req, res) => {
-  controllers.addLinks()
-  .then((result) => {
-    res.status(200).send('Received request to add link');
-  })
-  .catch((err) => {
-    res.status(500).send('Error with request to add link');
-  })
+app.post('/resources', (req, res) => {
+  controllers.addLinks(req.body)
+    .then((result) => {
+      res.status(200).send('Received request to add link');
+    })
+    .catch((err) => {
+      res.status(500).send('Error with request to add link');
+    })
 })
 
 let port = 3100;

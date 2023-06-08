@@ -1,12 +1,12 @@
 import React from 'react';
 import ResourcesForm from './ResourcesForm.jsx';
 
-const ResourcesFormHolder = function ({setDeadlines}) {
+const ResourcesFormHolder = function ({setURLLinks, linkFiller}) {
 
   return (
     <section className='deadlineFormHolder'>
       Add a New Resource
-      <ResourcesForm setDeadlines={setDeadlines}/>
+      <ResourcesForm setURLLinks={setURLLinks} linkFiller={linkFiller}/>
     </section>
   )
 }

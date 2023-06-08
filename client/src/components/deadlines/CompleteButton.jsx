@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-const CompleteButton = function ({deadline, listFiller}) {
+const CompleteButton = function ({deadline, taskListFiller}) {
 
   let handleClick = function () {
     axios.put('/tasks', null, {
@@ -11,7 +11,7 @@ const CompleteButton = function ({deadline, listFiller}) {
       }
     })
       .then((response) => {
-        listFiller();
+        taskListFiller();
       })
       .catch((err) => {
         return;

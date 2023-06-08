@@ -20,18 +20,24 @@ controllers.completeTask = function (params) {
     {Completed: params.completed})
 }
 
-controllers.addLinks = function (data) {
-  return db.Links.create({
-
-  });
-}
-
 controllers.getLinks = function () {
   return db.Links.find();
 }
 
+controllers.addLinks = function (data) {
+  return db.Links.create({
+    task_id: data.task_id,
+    Description: data.Description,
+    url: data.url
+  });
+}
+
 controllers.deleteAll = function () {
   return db.Tasks.deleteMany()
+}
+
+controllers.deleteAllUrls = function () {
+  return db.Links.deleteMany()
 }
 
 module.exports = controllers;
