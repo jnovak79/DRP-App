@@ -5,15 +5,14 @@ import CompletedList from './completed/CompletedList.jsx';
 import ResourcesList from './resources/ResourcesList.jsx';
 import Header from './Header.jsx';
 import axios from 'axios';
+import ResourcesFormHolder from './resources/ResourcesFormHolder.jsx';
 import Nuclear from './Nuclear.jsx';
-
-// PLACEHOLDER DATA UNTIL RESPONSE FROM DB IN DEADLINES FIRST STATE
 
 const App = function () {
 
   const [deadlines, setDeadlines] = useState([])
 
-  let listFiller = function () {
+  let taskListFiller = function () {
     axios.get('/tasks')
     .then((result) => {
       setDeadlines(result.data);
@@ -23,19 +22,35 @@ const App = function () {
     })
   }
 
+  let linkFiller = function () {
+    axios.get('/')
+  }
+
   useEffect (function () {
-    listFiller()
+    taskListFiller()
   }, [])
 
+  const [nuke, setNuke] = useState(false)
+
+  if (!nuke) {
   return (
     <div>
       <Header />
-      <DeadlinesList deadlines={deadlines} listFiller={listFiller}/>
+      <DeadlinesList deadlines={deadlines} taskListFiller={taskListFiller}/>
       <ResourcesList />
       <DeadlineFormHolder setDeadlines={setDeadlines}/>
-      <CompletedList deadlines={deadlines} listFiller={listFiller}/>
+      <ResourcesFormHolder setDeadlines={setDeadlines}/>
+      <CompletedList deadlines={deadlines} taskListFiller={taskListFiller}/>
+      <Nuclear setNuke={setNuke}/>
     </div>
   )
+  } else {
+    return (
+      <div className='NukePage'>
+        🗿
+      </div>
+    )
+  }
 
 }
 

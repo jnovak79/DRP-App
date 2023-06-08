@@ -1,18 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 
-const DeadlineForm = function ({setDeadlines}) {
+const ResourcesForm = function ({setDeadlines}) {
 
   let handleSubmit = function (e) {
     e.preventDefault();
-    let task = e.target[0].value;
-    let summary = e.target[1].value;
-    let date = e.target[2].value;
-    axios.post('/tasks', {
-      Task: task,
-      Summary: summary,
-      Date: date,
-      Completed: false
+    let Description = e.target[0].value;
+    let url = e.target[1].value;
+    axios.post('/resources', {
+      Description: Description,
+      url: url,
+      task_id: 1
     })
       .then((result) => {
         setDeadlines(result.data);
@@ -20,24 +18,21 @@ const DeadlineForm = function ({setDeadlines}) {
         e.target[1].value = '';
       })
       .catch((err) => {
-
+        return;
       })
   }
 
   return (
     <form className='deadlineForm' onSubmit={handleSubmit}>
-      <label>Task
+      <label>Description
         <input className='formTaskInput'/>
       </label>
-      <label>Summary
+      <label>URL
         <textarea className='formSummaryInput'/>
       </label>
-      <label>Due Date
-        <input type='date'/>
-      </label>
-      <input className='taskSubmit' type='submit' value='Add Task'/>
+      <input className='taskSubmit' type='submit' value='Add Resource'/>
     </form>
   )
 }
 
-export default DeadlineForm;
+export default ResourcesForm;

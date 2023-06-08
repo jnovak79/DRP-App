@@ -45,6 +45,26 @@ app.put('/tasks', (req, res) => {
     })
 })
 
+app.get('/resources', (req, res) => {
+  controllers.getLinks()
+    .then((result) => {
+      res.status(200).send('Received request to get links');
+    })
+    .catch((err) => {
+      res.status(500).send('Error with request to get links');
+    })
+})
+
+app.put('/resources', (req, res) => {
+  controllers.addLinks()
+  .then((result) => {
+    res.status(200).send('Received request to add link');
+  })
+  .catch((err) => {
+    res.status(500).send('Error with request to add link');
+  })
+})
+
 let port = 3100;
 
 app.listen(port, function() {
