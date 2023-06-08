@@ -51,7 +51,6 @@ const App = function () {
       <DeadlineFormHolder setDeadlines={setDeadlines}/>
       <ResourcesFormHolder setURLLinks={setURLLinks} linkFiller={linkFiller}/>
       <CompletedList deadlines={deadlines} taskListFiller={taskListFiller}/>
-      <Nuclear setNuke={setNuke}/>
     </div>
   )
 }
