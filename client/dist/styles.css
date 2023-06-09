@@ -149,3 +149,32 @@ body {
   margin-top: 2%;
 }
 
+@keyframes colorChange {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: rgb(177, 96, 96);
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+.Nuclear button {
+  background-color: white;
+  animation: colorChange 2s infinite;
+  margin: 3%;
+  height: 10em;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.Nuclear button:hover {
+  color: white;
+}
+
+.NukePage {
+  font-size: 20em;
+  text-align: center;
+}
