@@ -6,7 +6,6 @@ import ResourcesList from './resources/ResourcesList.jsx';
 import Header from './Header.jsx';
 import axios from 'axios';
 import ResourcesFormHolder from './resources/ResourcesFormHolder.jsx';
-import Nuclear from './Nuclear.jsx';
 
 const App = function () {
 
@@ -53,7 +52,6 @@ const App = function () {
       <DeadlineFormHolder setDeadlines={setDeadlines}/>
       <ResourcesFormHolder setURLLinks={setURLLinks} linkFiller={linkFiller}/>
       <CompletedList deadlines={deadlines} taskListFiller={taskListFiller}/>
-      <Nuclear setNuke={setNuke}/>
     </div>
   )
   } else {
