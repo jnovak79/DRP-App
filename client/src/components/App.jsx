@@ -5,7 +5,8 @@ import CompletedList from './completed/CompletedList.jsx';
 import ResourcesList from './resources/ResourcesList.jsx';
 import Header from './Header.jsx';
 import axios from 'axios';
-import ResourcesFormHolder from './resources/ResourcesFormHolder.jsx';
+import ResourcesForm from './resources/ResourcesForm.jsx';
+
 
 const App = function () {
 
@@ -41,26 +42,16 @@ const App = function () {
   }, [])
 
 
-  const [nuke, setNuke] = useState(false)
-
-  if (!nuke) {
   return (
     <div>
       <Header />
       <DeadlinesList deadlines={deadlines} taskListFiller={taskListFiller}/>
       <ResourcesList URLLinks={URLLinks}/>
       <DeadlineFormHolder setDeadlines={setDeadlines}/>
-      <ResourcesFormHolder setURLLinks={setURLLinks} linkFiller={linkFiller}/>
+      <ResourcesForm setURLLinks={setURLLinks} linkFiller={linkFiller}/>
       <CompletedList deadlines={deadlines} taskListFiller={taskListFiller}/>
     </div>
   )
-  } else {
-    return (
-      <div className='NukePage'>
-        🗿
-      </div>
-    )
-  }
 }
 
 export default App;

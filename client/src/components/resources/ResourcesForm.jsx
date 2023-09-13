@@ -23,15 +23,18 @@ const ResourcesForm = function ({setURLLinks, linkFiller}) {
   }
 
   return (
-    <form className='deadlineForm' onSubmit={handleSubmit}>
-      <label>Description
-        <input className='formTaskInput'/>
-      </label>
-      <label>URL
-        <textarea className='formSummaryInput'/>
-      </label>
-      <input className='taskSubmit' type='submit' value='Add Resource'/>
-    </form>
+    <section className='deadlineFormHolder'>
+      <span className='formHeader'>Add a New Resource</span>
+      <form className='deadlineForm' onSubmit={handleSubmit}>
+        <label>Description
+          <input className='formTaskInput'/>
+        </label>
+        <label>URL
+          <textarea className='formSummaryInput'/>
+        </label>
+        <input className='taskSubmit' type='submit' value='Add Resource'/>
+      </form>
+    </section>
   )
 }
 
