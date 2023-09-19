@@ -7,21 +7,6 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-// controllers.deleteAll()
-//   .then((result) => {
-//     console.log('tasks database cleared')
-//   })
-//   .catch((err) => {
-//     console.log('Error clearing database')
-//   })
-
-// controllers.deleteAllUrls()
-//   .then((result) => {
-//     console.log('Links database cleared')
-//   })
-//   .catch((err) => {
-//     console.log('Error clearing database')
-//   })
 
 app.get('/tasks', (req, res) => {
   controllers.getTasks()
@@ -72,6 +57,22 @@ app.post('/resources', (req, res) => {
       res.status(500).send('Error with request to add link');
     })
 })
+
+// controllers.deleteAll()
+//   .then((result) => {
+//     console.log('tasks database cleared')
+//   })
+//   .catch((err) => {
+//     console.log('Error clearing database')
+//   })
+
+// controllers.deleteAllUrls()
+//   .then((result) => {
+//     console.log('Links database cleared')
+//   })
+//   .catch((err) => {
+//     console.log('Error clearing database')
+//   })
 
 let port = 3100;
 
