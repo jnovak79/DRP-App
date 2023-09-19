@@ -8,7 +8,7 @@ const Nuclear = function ({setNuke}) {
 
   return (
     <div className='Nuclear'>
-      <button onClick={handleNuke}>Nuke the Server</button>
+      <button onClick={handleNuke}>Crash The Page</button>
     </div>
   )
 }
