@@ -20,7 +20,7 @@ const DeadlineForm = function ({setDeadlines}) {
         e.target[1].value = '';
       })
       .catch((err) => {
-
+        return;
       })
   }
 

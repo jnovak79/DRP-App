@@ -39,7 +39,6 @@ app.put('/tasks', (req, res) => {
 })
 
 app.delete('/tasks', (req, res) => {
-  console.log(req.query);
   controllers.deleteTask(req.query)
     .then((result) => {
       res.status(200).send('Received request to delete');
@@ -66,6 +65,16 @@ app.post('/resources', (req, res) => {
     })
     .catch((err) => {
       res.status(500).send('Error with request to add link');
+    })
+})
+
+app.delete('/resources', (req, res) => {
+  controllers.deleteLink(req.query)
+    .then((result) => {
+      res.status(200).send('Received request to delete link');
+    })
+    .catch((err) => {
+      res.status(500).send('Error with request to remove link');
     })
 })
 

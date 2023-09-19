@@ -46,7 +46,7 @@ const App = function () {
     <div>
       <Header />
       <DeadlinesList deadlines={deadlines} taskListFiller={taskListFiller}/>
-      <ResourcesList URLLinks={URLLinks}/>
+      <ResourcesList URLLinks={URLLinks} linkFiller={linkFiller}/>
       <DeadlineFormHolder setDeadlines={setDeadlines}/>
       <ResourcesForm setURLLinks={setURLLinks} linkFiller={linkFiller}/>
       <CompletedList deadlines={deadlines} taskListFiller={taskListFiller}/>
