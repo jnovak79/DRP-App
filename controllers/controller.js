@@ -32,6 +32,10 @@ controllers.addLinks = function (data) {
   });
 }
 
+controllers.deleteTask = function (data) {
+  return db.Tasks.deleteOne({_id : data.id});
+}
+
 controllers.deleteAll = function () {
   return db.Tasks.deleteMany()
 }

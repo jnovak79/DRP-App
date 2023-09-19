@@ -38,6 +38,17 @@ app.put('/tasks', (req, res) => {
     })
 })
 
+app.delete('/tasks', (req, res) => {
+  console.log(req.query);
+  controllers.deleteTask(req.query)
+    .then((result) => {
+      res.status(200).send('Received request to delete');
+    })
+    .catch((err) => {
+      res.status(500).send('Error with request to delete');
+    })
+})
+
 app.get('/resources', (req, res) => {
   controllers.getLinks()
     .then((result) => {
