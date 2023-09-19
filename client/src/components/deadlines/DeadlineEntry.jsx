@@ -1,5 +1,6 @@
 import React from 'react';
 import CompleteButton from './CompleteButton.jsx';
+import DeleteButton from './DeleteButton.jsx';
 
 const DeadlineEntry = function ({deadline, taskListFiller}) {
 
@@ -22,6 +23,7 @@ const DeadlineEntry = function ({deadline, taskListFiller}) {
       <div className='taskEntryDate'>
         Due on {deadline.Date}
         <CompleteButton deadline={deadline} taskListFiller={taskListFiller}/>
+        <DeleteButton deadline={deadline} taskListFiller={taskListFiller}/>
       </div>
     </section>
   )

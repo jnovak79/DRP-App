@@ -20,6 +20,10 @@ controllers.completeTask = function (params) {
     {Completed: params.completed})
 }
 
+controllers.deleteTask = function (data) {
+  return db.Tasks.deleteOne({_id : data.id});
+}
+
 controllers.getLinks = function () {
   return db.Links.find();
 }
@@ -30,6 +34,10 @@ controllers.addLinks = function (data) {
     Description: data.Description,
     url: data.url
   });
+}
+
+controllers.deleteLink = function (data) {
+  return db.Links.deleteOne({_id: data.id});
 }
 
 controllers.deleteAll = function () {

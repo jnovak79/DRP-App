@@ -1,6 +1,7 @@
 import React from 'react';
+import DeleteButton from './DeleteButton.jsx';
 
-const ResourceEntry = function ({link}) {
+const ResourceEntry = function ({link, linkFiller}) {
 
   return (
     <section className='taskEntry'>
@@ -18,6 +19,9 @@ const ResourceEntry = function ({link}) {
           {link.url}
         </div>
       </div>
+        <div className='LinkEntryButton'>
+          <DeleteButton link={link} linkFiller={linkFiller}/>
+        </div>
     </section>
   )
 }
